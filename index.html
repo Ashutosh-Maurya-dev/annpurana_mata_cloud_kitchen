@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annpurna Mata Cloud Kitchen | Best Tiffin Service in Varanasi</title>
+    <!-- Google Fonts for a premium look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Hind:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        :root {
+            --primary-color: #ff6b35; /* Saffron/Orange for appetite */
+            --secondary-color: #2e7d32; /* Green for freshness */
+            --text-dark: #2d3436;
+            --text-light: #ffffff;
+            --bg-light: #fdfbf7;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html{ scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Hind', 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* Header & Navigation */
+        header {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary-color); }
+
+        .btn-order {
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .btn-order:hover { background: #e55a2b; transform: translateY(-2px); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 { font-size: 3.2rem; margin-bottom: 1rem; font-weight: 700; }
+        .hero p { font-size: 1.3rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        .cta-button {
+            background: #25D366; /* WhatsApp Green */
+            color: white;
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+        .cta-button:hover { background: #128C7E; transform: scale(1.05); }
+
+        /* Features Section */
+        .features { padding: 60px 20px; text-align: center; max-width: 1200px; margin: 0 auto; }
+        .section-title { font-size: 2.2rem; color: var(--primary-color); margin-bottom: 10px; }
+        .section-subtitle { color: #666; margin-bottom: 40px; font-size: 1.1rem; }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border-top: 4px solid var(--primary-color);
+        }
+        .feature-card:hover { transform: translateY(-5px); }
+        .feature-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .feature-card h3 { margin-bottom: 10px; color: var(--text-dark); }
+        .feature-card p { color: #555; font-size: 0.95rem; }
+
+        /* Menu / Tiffin Plans */
+        .menu-section { background: #fff3e0; padding: 60px 20px; }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+        .menu-item:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.12); }
+        
+        .menu-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .menu-details { padding: 25px; }
+        .menu-details ul { margin: 15px 0; padding-left: 20px; list-style: disc; color: #555; }
+        .price { color: var(--secondary-color); font-weight: 700; font-size: 1.4rem; margin-top: 10px; display: block;}
+        
+        .btn-small {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--secondary-color);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-small:hover { background: #1b5e20; }
+
+        /* Footer & Contact */
+        footer { background: #1a1a1a; color: #ccc; padding: 50px 20px 20px; }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info h3 { color: var(--primary-color); margin-bottom: 20px; font-size: 1.4rem; }
+        .contact-info p { margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; }
+        .contact-info a { color: #ff6b35; font-weight: 600; }
+
+        .map-container iframe {
+            width: 100%;
+            height: 250px;
+            border: 0;
+            border-radius: 10px;
+            filter: grayscale(20%);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+                /* Full Menu Section Styles */
+        .full-menu-section {
+            padding: 60px 20px;
+            background-color: #ffffff;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .menu-category-card {
+            background: var(--bg-light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .menu-category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .category-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .menu-list {
+            list-style: none;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .menu-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        .menu-list li:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            padding-right: 15px;
+        }
+
+        .item-price {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
+            .nav-links { display: none; } /* Hidden on mobile for simplicity, can add hamburger later */
+            .navbar { justify-content: space-between; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="logo">🍛 Annpurna Mata Kitchen</div>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#full-menu">Menu</a>
+                <a href="#menu">Tiffin Plans</a>
+                <a href="#features">Why Us</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="tel:+919236192433" class="btn-order">📞 Call Now</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Ghar Jaisa Swad, Ab Aapke Dwar Par!</h1>
+            <p>Varanasi ki sabse trusted Cloud Kitchen & Tiffin Service. 100% Shuddh, Hygienic aur Delicious food, daily deliver.</p>
+            <a href="https://wa.me/919236192433?text=Hi%20Annpurna%20Mata%20Kitchen,%20mujhe%20food%20order%20karna%20hai." class="cta-button">
+                💬 Order on WhatsApp
+            </a>
+        </div>
+    </section>
+    <!--Menu-->
+        <!-- Complete Menu Section -->
+    <section class="full-menu-section" id="full-menu">
+        <h2 class="section-title">Hamara Complete Menu</h2>
+        <p class="section-subtitle">Fresh, Garam aur Swadisht khana, har waqt uplabdh!</p>
+        
+        <div class="menu-categories">
+            <!-- Category 1: Nashta -->
+            <div class="menu-category-card">
+                <div class="category-header">🌅 Nashta (Breakfast)</div>
+                <ul class="menu-list">
+                    <li>
+                        <span class="item-name">Aloo Paratha (2 pcs) + Dahi + Achar</span>
+                        <span class="item-price">₹60</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Kanda Poha + Chana / Jalebi</span>
+                        <span class="item-price">₹50</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Chole Bhature (2 Bhature)</span>
+                        <span class="item-price">₹80</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Plain Dosa + Sambar & Chutney</span>
+                        <span class="item-price">₹60</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Category 2: Lunch & Dinner -->
+            <div class="menu-category-card">
+                <div class="category-header">🍛 Lunch & Dinner (A la Carte)</div>
+                <ul class="menu-list">
+                    <li>
+                        <span class="item-name">Dal Fry + Jeera Rice + Salad</span>
+                        <span class="item-price">₹90</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Matar Paneer + 4 Butter Roti</span>
+                        <span class="item-price">₹130</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Mix Veg + Dal + 4 Roti + Salad</span>
+                        <span class="item-price">₹110</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Plain Dal + 4 Roti + Salad</span>
+                        <span class="item-price">₹70</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Category 3: Special Combos -->
+            <div class="menu-category-card">
+                <div class="category-header">⭐ Special Combos</div>
+                <ul class="menu-list">
+                    <li>
+                        <span class="item-name">Rajma Chawal Combo (with Salad)</span>
+                        <span class="item-price">₹100</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Kadhi Chawal Combo (with Papad)</span>
+                        <span class="item-price">₹90</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Egg Curry (2 pcs) + 4 Roti / Rice</span>
+                        <span class="item-price">₹120</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <p style="margin-bottom: 15px; color: #555;">Kya aapko koi specific dish chahiye? Hum customize bhi karte hain!</p>
+            <a href="https://wa.me/919236192433?text=Hi,%20mujhe%20aaj%20ke%20special%20menu%20ke%20baare%20mein%20jaanna%20hai" class="btn-order" style="padding: 12px 30px; font-size: 1rem;">
+                💬 Daily Special Menu ke liye WhatsApp karein
+            </a>
+        </div>
+    </section>
+
+    <!-- Menu / Tiffin Plans -->
+    <section class="menu-section" id="menu">
+        <h2 class="section-title" style="text-align: center;">Hamare Tiffin Plans</h2>
+        <p class="section-subtitle" style="text-align: center;">Students, Office workers aur families ke liye perfect options.</p>
+        
+        <div class="menu-grid">
+            <!-- Plan 1 -->
+            <div class="menu-item">
+                <div class="menu-header">Veg Standard Thali</div>
+                <div class="menu-details">
+                    <ul>
+                        <li>4 Soft Rotis / 1 Paratha</li>
+                        <li>Seasonal Sabzi & Dal</li>
+                        <li>Steamed Rice</li>
+                        <li>Salad, Pickle & Papad</li>
+                    </ul>
+                    <span class="price">₹100 / plate</span>
+                    <a href="https://wa.me/919236192433?text=Hi,%20mujhe%20Veg%20Standard%20Thali%20order%20karni%20hai." class="btn-small">Order Now on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Plan 2 -->
+            <div class="menu-item">
+                <div class="menu-header">Premium Special Thali</div>
+                <div class="menu-details">
+                    <ul>
+                        <li>4 Rotis / Jeera Rice</li>
+                        <li>Mix Veg & Dal Fry</li>
+                        <li>Kadhi Pakora</li>
+                        <li>Salad, Pickle & Daily Sweet</li>
+                    </ul>
+                    <span class="price">₹150 / plate</span>
+                    <a href="https://wa.me/919236192433?text=Hi,%20mujhe%20Premium%20Special%20Thali%20order%20karni%20hai." class="btn-small">Order Now on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="menu-item">
+                <div class="menu-header">Monthly Tiffin Subscription</div>
+                <div class="menu-details">
+                    <ul>
+                        <li>Lunch & Dinner Included</li>
+                        <li>Weekly Menu Change hota hai</li>
+                        <li>Hostelers & Students ke liye best</li>
+                        <li>Free Delivery in nearby areas</li>
+                    </ul>
+                    <span class="price">Call for Monthly Price</span>
+                    <a href="tel:+919236192433" class="btn-small">📞 Call for Subscription</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="features" id="features">
+        <h2 class="section-title">Humein Kyun Chunein? (Why Choose Us)</h2>
+        <p class="section-subtitle">Quality aur taste mein hum koi compromise nahi karte.</p>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🥗</div>
+                <h3>100% Shuddh & Fresh</h3>
+                <p>Hum rozana taazi sabziyan aur premium quality masalon ka hi use karte hain. No stale food!</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏠</div>
+                <h3>Ghar Jaisa Khana</h3>
+                <p>Bahar ka oily khana chhodiye. Annpurna Mata ka homemade taste aapko healthy aur fresh feel karayega.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Time Par Delivery</h3>
+                <p>Sundarpur, Nagwa, aur aas-paas ke areas mein hum lunch aur dinner bilkul time par deliver karte hain.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Contact -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Annpurna Mata Cloud Kitchen</h3>
+                <p>📍 <strong>Address:</strong><br>
+                F8, Jainkipur, N8/49,<br>
+                Near Hari Om Apartment, Vaisno Vihar Colony,<br>
+                Ganesh Dham Colony, Sundarpur, Nagwa,<br>
+                Varanasi, Uttar Pradesh 221010</p>
+                
+                <p>📞 <strong>Phone:</strong> <a href="tel:+919236192433">+91 9236192433</a></p>
+                
+                <p>⏰ <strong>Timing:</strong><br>
+                Monday - Sunday: 8:00 AM - 10:00 PM</p>
+            </div>
+            
+            <div class="map-container">
+                <!-- Google Map Embed (Approximate location for Nagwa/Sundarpur area) -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.9!2d82.98!3d25.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e3f0a0a0a0a0a%3A0x0!2sSundarpur%2C%20Nagwa%2C%20Varanasi!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                <p style="font-size: 0.8rem; margin-top: 10px; color: #888;">*Map location approximate. Please call for exact directions.</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Annpurna Mata Cloud Kitchen & Tiffin Services. All Rights Reserved. <br>
+            Made with ❤️ in Varanasi.
+        </div>
+    </footer>
+
+</body>
+</html>
